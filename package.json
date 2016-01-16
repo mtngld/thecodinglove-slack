@@ -1,0 +1,17 @@
+{
+  "name": "thecodinglove-slack",
+  "version": "0.0.0",
+  "description": "A slash command to post random gifs from thecodinglove.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "~4.13.1",
+    "body-parser": "~1.13.2",
+    "request": "~2.58.0",
+    "http-string-parser": "0.0.5"
+  }
+}
