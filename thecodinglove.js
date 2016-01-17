@@ -1,9 +1,10 @@
 var request = require('request');
+var he = require('he');
 
 module.exports = function (req, res, next) {
   var thecodinglove_random = 'http://thecodinglove.com/random';
   request({uri: thecodinglove_random,encoding: 'utf-8'}, function(err, response, body) {
-      console.log(body);
+    console.log(body);
     var re_text = /<h3>(.*)<\/h3>/;
     text = body.match(re_text)[1];
     console.log(text);
@@ -25,7 +26,7 @@ module.exports = function (req, res, next) {
     botPayload.attachments = [];
     var attachment = {};
     attachment.image_url = image;
-    attachment.title = text;
+    attachment.title = he.decode(text);
     attachment.title_link = post;
     attachment.pretext = 'thecodinglove.com'
     attachment.text = 'by: ' + credit;
